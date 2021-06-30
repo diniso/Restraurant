@@ -1,0 +1,68 @@
+.slova {
+    font-style: oblique;
+    color: rgb(221, 173, 17)
+}
+
+.headerslova {
+    font-size: 35px;
+}
+
+.obicnaslova {
+    font-size: 25px;
+    color: black;
+}
+
+.dropdown-menu li, .dropdown-menu {
+    background-color: rgb(221, 173, 17)
+}
+
+.dropdown-item {
+    color: black;
+}
+
+.table-bordered td, .table-bordered, .table-bordered th {
+    border: none !important; 
+    vertical-align: middle;
+}
+
+
+.dugme {
+    border-radius:5px; 
+    background-color: rgb(221, 173, 17);
+     color:black; 
+     font-size: 20px;
+}
+
+#tabeladodajrecept:nth-child(2*n+1) {
+    background-color: rgb(163, 228, 13);
+}
+
+.dropdown-left {
+    top: -10px !important;
+    left: -100% !important;
+}
+
+.velicinaslikeSlide , .velicinaslikeSlide img {
+    width: 60vw;
+    height: 60vh;
+    max-width: 500px;
+    max-height: 500px;
+    margin: auto;
+}
+
+#ocenatekst:hover {
+    font-size: 30px !important;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+.predjiprekodasevidi {
+    cursor: pointer;
+}
+
+.nazivjezapreko:hover{
+    font-size: 30px !important;
+    font-weight: bold;
+    cursor: pointer;
+}

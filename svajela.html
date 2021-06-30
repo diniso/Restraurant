@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sva jela</title>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="korisniciscript.js"></script>
+    <script src="svajela.js"></script>
+    <script src="ucitavanja/ucitajsverecepte.js"></script>
+
+</head>
+<body style="background-color: rgb(226, 225, 179);" >
+
+    <div class="container-fluid"> 
+
+        <div class="row" style="background-color: rgb(116, 110, 58);">
+            <div class="col-3 col-md-2" style="text-align: center;vertical-align: middle;">
+                <img src="images/logo.jfif" style="width: 80px; margin: auto; padding-top: 4vh; padding-bottom: 4vh;">
+            </div>
+            <div class="col-6 col-md-8" style="text-align: center;vertical-align: middle;">
+               <h1 class="slova headerslova" style="padding-top: 6vh;">Vladova kuhinja</h1>
+            </div>
+
+            <div class="col-3 col-md-2">
+                <script src="navigation.js"></script>
+            </div>
+
+            
+        </div>
+
+        <div class="row">
+            <div class="col text-center">
+                <table class="table table-bordered">
+                    <tr>
+                        <th colspan="2" class="slova headerslova" style="padding-top: 50px; padding-bottom: 25px;" >
+                            <script>
+                                 document.write('<p id="tipjela">' + localStorage.getItem("vrstaJela") + '</p>')
+                            //    document.write(localStorage.getItem("vrstaJela"))
+                            </script>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td class="slova obicnaslova" style="margin-left: 30px; text-align: right; padding-left: calc(1vw + 50px);">Ime recepta:</td>
+                        <td style="text-align: left;">
+                            <input type="text" id="nazivrecepta">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="slova obicnaslova" style="text-align: right;">
+                            Sortiraj:
+                        </td>
+                        <td  style="text-align: left;">
+                            <select id="vrstasortiranja" >
+                                <option value="Rastuce">Rastuce</option>
+                                <option value="Opadajuce">Opadajuce</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="slova obicnaslova" style="text-align: right;">
+                            Pretraga po: 
+                        </td>
+                        <td style="text-align: left;" class="slova obicnaslova">
+                            Ocena <input type="radio" name="tipsorta" value="Ocena" >
+                            Tezina <input type="radio" name="tipsorta" value="Tezina">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button type="button" class="dugme" onclick="pretraziReceptePoTipu()">Pretrazi</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <script>
+            ucitajSveRecepte(dohvatiReceptePoTipu())
+        </script>
+
+
+        <div class="row">
+            <div class="col" style="background-color: rgb(116, 110, 58);text-align: center;vertical-align: middle; margin-top: 50px;">
+                <h3 class="slova" style="padding: 25px; margin-bottom: 25px;">Copyright 2021, Vlade Vulovic, Odsek za softversko inzenjerstvo Elektrotehnickog fakulteta Univerziteta u Beogradu</h3>
+            </div>
+        </div>
+    
+        
+    </div>
+    
+</body>
+</html>
