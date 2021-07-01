@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="style.css">
     <script src="korisniciscript.js"></script>
 
+    <script src="jezici/language.js"></script>
+
 </head>
 <body style="background-color: rgb(226, 225, 179);" >
 
@@ -25,7 +27,7 @@
                 <img src="images/logo.jfif" style="width: 80px; margin: auto; padding-top: 4vh; padding-bottom: 4vh;">
             </div>
             <div class="col-6 col-md-8" style="text-align: center;vertical-align: middle;">
-               <h1 class="slova headerslova" style="padding-top: 6vh;">Vladova kuhinja</h1>
+               <h1 class="slova headerslova" style="padding-top: 6vh;"><script>document.write(readForLanguage("naslov"))</script></h1>
             </div>
 
             <div class="col-3 col-md-2">
@@ -37,13 +39,13 @@
 
         <div class="row" style="margin: 20px;" >
             <div class="col-12" style="text-align: center; margin-top: 25px; margin-bottom: 50px;">
-                <h1 class="slova">O nama</h1>
+                <h1 class="slova"><script>document.write(readForLanguage("onama"))</script></h1>
             </div>
             <div class="col-12 col-lg-6 order-2 order-lg-1">
-                <p class="slova obicnaslova  mt-5 mt-lg-0">Vladova kuhinja je restoran koji se nalazi na lokaciji <b>Bulevar kralja Aleksandra 73, Beograd</b>.</p>
-                <p class="slova obicnaslova">Restoran je poceo sa radom 2008 godine i od tada imamo veoma dobre kritike i veliki broj nasih stalnih musterija.</p>
-                <p class="slova obicnaslova">Ako imate neka pitanja, ili zelite da rezereviste kod nas, to mozete uciniti na broj: <b><i>061 231 312</i></b> ili <b><i>011 231 312</i></b></p>
-                <p class="slova obicnaslova">Od nedavno, moguce je nasu hrana naruciti i online. Neki od sajtova preko kojih to mozete uraditi: <a href="https://www.donesi.com/" target="_blank"><b>Donesi</b></a> ili <a href="https://wolt.com/" target="_blank"><b>Wolt</b></a></p>
+                <p class="slova obicnaslova  mt-5 mt-lg-0"><script>document.write(readForLanguage("onamap1"))</script><b>Bulevar kralja Aleksandra 73, Beograd</b>.</p>
+                <p class="slova obicnaslova"><script>document.write(readForLanguage("onamap2"))</script></p>
+                <p class="slova obicnaslova"><script>document.write(readForLanguage("onamap31"));</script><b><i>061 231 312</i></b><script>document.write(readForLanguage("onamap32"))</script><b><i>011 231 312</i></b></p>
+                <p class="slova obicnaslova"><script>document.write(readForLanguage("onamap4"));</script><a href="https://www.donesi.com/" target="_blank"><b>Donesi</b></a><script>document.write(readForLanguage("onamap32"))</script><a href="https://wolt.com/" target="_blank"><b>Wolt</b></a></p>
 
             </div>
             <div class="col-12 col-lg-6 order-1 order-lg-2 align-self-center" style="display: flex; justify-content:center; vertical-align: middle;">
@@ -63,7 +65,7 @@
 
         <div class="row">
             <div class="col" style="background-color: rgb(116, 110, 58);text-align: center;vertical-align: middle;">
-                <h3 class="slova" style="padding: 25px; margin-bottom: 25px;">Copyright 2021, Vlade Vulovic, Odsek za softversko inzenjerstvo Elektrotehnickog fakulteta Univerziteta u Beogradu</h3>
+                <h3 class="slova" style="padding: 25px; margin-bottom: 25px;"><script>document.write(readForLanguage("footer"))</script></h3>
             </div>
         </div>
     

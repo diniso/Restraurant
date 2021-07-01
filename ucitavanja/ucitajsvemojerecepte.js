@@ -1,4 +1,14 @@
 user = localStorage.getItem("loggeduser")
+data = JSON.parse(localStorage.getItem(localStorage.getItem("language")))
+
+dodajslikuTekst = data["dodajslikuugaleriju"]
+tezinaJelaTekst = data["tezina"]
+vrstaJelaTekst = data["vrstajela"]
+sastojciTekst = data["sastojci"]
+receptTekst = data["recept"]
+vremeTekst = data["vreme"]
+
+user = localStorage.getItem("loggeduser")
 recepti = []
 if (localStorage.getItem("recepti")) recepti =JSON.parse(localStorage.getItem("recepti"))
 
@@ -7,6 +17,9 @@ recepti = recepti.filter(recept => recept.korisnik == user)
 document.write("<div class='row' >")
 
 for (var i = 0 ; i < recepti.length ; i++) {
+
+    vrstaReceptaTekst = recepti[i].vrsta.toLowerCase()
+    vrstaReceptaTekst = data[vrstaReceptaTekst]
 
     sastojci = ""
 
@@ -70,27 +83,27 @@ for (var i = 0 ; i < recepti.length ; i++) {
             <td colspan="2" class="obicnaslova slova" style="padding-left: calc(50% - 170px);">
                 <form action="javascript:dodajslikuugaleriju(profileFile${i}, '${recepti[i].id}')">
                 <input type="file" id="profileFile${i}" accept=".jpg, .jpeg, .png" style="display: none" onchange="form.submit()"> 
-                <label style="padding:10px" class="dugme" for="profileFile${i}">Dodaj sliku u galeriju</label>
+                <label style="padding:10px" class="dugme" for="profileFile${i}">${dodajslikuTekst}</label>
                 </form>
             </td>
         </tr>
         <tr>
             <td class="obicnaslova slova"  style="padding-left: calc(50% - 170px);">
-                Tezina jela: ${recepti[i].tezina}
+                ${tezinaJelaTekst} ${recepti[i].tezina}
             </td>
         </tr>
         <tr>
             <td class="obicnaslova slova"  style="padding-left: calc(50% - 170px);">
-                Vrsta jela: ${recepti[i].vrsta}
+                ${vrstaJelaTekst} ${vrstaReceptaTekst}
             </td>
         </tr>
         <tr>
             <td class="obicnaslova slova"  style="padding-left: calc(50% - 170px);">
-                Vreme: ${recepti[i].vreme}
+                ${vremeTekst} ${recepti[i].vreme}
             </td>
         </tr>
         <tr>
-            <td class="obicnaslova slova"  style="padding-left: calc(50% - 170px);">Sastojci:</td>
+            <td class="obicnaslova slova"  style="padding-left: calc(50% - 170px);">${sastojciTekst}</td>
         </tr>
         <tr>
             <td colspan="2">
@@ -100,7 +113,7 @@ for (var i = 0 ; i < recepti.length ; i++) {
             </td>
         </tr>
         <tr>
-            <td class="obicnaslova slova"  style="padding-left: calc(50% - 170px);">Recept:</td>
+            <td class="obicnaslova slova"  style="padding-left: calc(50% - 170px);">${receptTekst}</td>
         </tr>
         <tr>
             <td colspan="2">

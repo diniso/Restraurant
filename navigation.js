@@ -1,30 +1,50 @@
 user = localStorage.getItem("loggeduser")
 
+data = JSON.parse(localStorage.getItem(localStorage.getItem("language")))
+
+meni = data["meni"]
+pocetna = data["pocetna"]
+recepti = data["recepti"]
+ulogujseTekst = data["ulogujse"]
+registrujseTekst = data["registrujse"]
+onama = data["onama"]
+
+predjelo = data["predjelo"]
+glavnojelo = data["glavnojelo"]
+dezert = data["dezert"]
+uzina = data["uzina"]
+
+dodajrecept = data["dodajrecept"]
+izlogujseTekst = data["izlogujse"]
+mojnalog = data["mojnalog"]
+
+zatvori = data["zatvori"]
+
 document.write(`
 
   
   <div class="dropdown" style="padding-top: 5vh">
     <button class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
       style="width: 15vw; height: 10vh; max-width: 100px; max-height: 80px; border-radius:5px; background-color: rgb(221, 173, 17); color:black; font-size: 20px;"
-    >Meni</button>
+    >${meni}</button>
     `)
 
 if (!user || user == "") {
     document.write(`
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="index.html">Pocetna</a>
-        <a class="dropdown-item" onclick="otvoriprvipodmeni()" class="dropdown-toggle dropleft-close" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Recepti</a>
+        <a class="dropdown-item" href="index.html">${pocetna}</a>
+        <a class="dropdown-item" onclick="otvoriprvipodmeni()" class="dropdown-toggle dropleft-close" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">${recepti}</a>
 
         <div class="dropdown-menu dropdown-left" role="menu" aria-labelledby="firstSubmenu" id="firstSubmenu">
-          <a onclick="predjiNaSvaJela('Predjela')" class="dropdown-item">Predjelo</a>
-          <a onclick="predjiNaSvaJela('Glavna jela')" class="dropdown-item">Glavno jelo</a>
-          <a onclick="predjiNaSvaJela('Dezerti')" class="dropdown-item">Dezert</a>
-          <a onclick="predjiNaSvaJela('Uzine')" class="dropdown-item">Uzina</a>
+          <a onclick="predjiNaSvaJela('Predjela')" class="dropdown-item">${predjelo}</a>
+          <a onclick="predjiNaSvaJela('Glavna jela')" class="dropdown-item">${glavnojelo}</a>
+          <a onclick="predjiNaSvaJela('Dezerti')" class="dropdown-item">${dezert}</a>
+          <a onclick="predjiNaSvaJela('Uzine')" class="dropdown-item">${uzina}</a>
         </div>
 
-        <a class="dropdown-item" data-target="#myModal" data-toggle="modal" href="#myModal">Uloguj se</a>
-        <a class="dropdown-item" data-target="#modalRegistruj" data-toggle="modal" href="#modalRegistruj">Registruj se</a>
-        <a class="dropdown-item" href="aboutus.html">O nama</a>
+        <a class="dropdown-item" data-target="#myModal" data-toggle="modal" href="#myModal">${ulogujseTekst}</a>
+        <a class="dropdown-item" data-target="#modalRegistruj" data-toggle="modal" href="#modalRegistruj">${registrujseTekst}</a>
+        <a class="dropdown-item" href="aboutus.html">${onama}</a>
       </div>
     </div>
 
@@ -32,7 +52,7 @@ if (!user || user == "") {
             <div class="modal-dialog">
               <div class="modal-content" style="background-color: rgb(255, 224, 102)">
                 <div class="modal-header">
-                  <h4 class="modal-title w-100 text-center">Uloguj se</h4>
+                  <h4 class="modal-title w-100 text-center">${ulogujseTekst}</h4>
                 </div>
                 <div class="modal-body">
                   <table class="table table-bordered" style="text-align:center">
@@ -45,8 +65,8 @@ if (!user || user == "") {
                   </table>
                 </div>
                 <div class="modal-footer" style="display:flex; justify-content:space-around">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Zatvori</button>
-                    <button type="button" class="btn btn-success" onclick="ulogujse()">Uloguj se</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">${zatvori}</button>
+                    <button type="button" class="btn btn-success" onclick="ulogujse()">${ulogujseTekst}</button>
                 </div>
               </div>
             </div>          
@@ -56,7 +76,7 @@ if (!user || user == "") {
             <div class="modal-dialog">
               <div class="modal-content" style="background-color: rgb(255, 224, 102)">
                 <div class="modal-header">
-                  <h4 class="modal-title w-100 text-center">Registruj se</h4>
+                  <h4 class="modal-title w-100 text-center">${registrujseTekst}</h4>
                 </div>
                 <div class="modal-body">
                   <table class="table table-bordered" style="text-align:center">
@@ -69,8 +89,8 @@ if (!user || user == "") {
                   </table>
                 </div>
                 <div class="modal-footer" style="display:flex; justify-content:space-around">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Zatvori</button>
-                    <button type="button" class="btn btn-success" onclick="registrujse()">Registruj se</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">${zatvori}</button>
+                    <button type="button" class="btn btn-success" onclick="registrujse()">${registrujseTekst}</button>
                 </div>
               </div>
             </div>          
@@ -81,20 +101,20 @@ if (!user || user == "") {
 else {
   document.write(`
     <div class="dropdown-menu">
-      <a class="dropdown-item" href="index.html">Pocetna</a>
-      <a class="dropdown-item" onclick="otvoriprvipodmeni()" class="dropdown-toggle dropleft-close" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Recepti</a>
+      <a class="dropdown-item" href="index.html">${pocetna}</a>
+      <a class="dropdown-item" onclick="otvoriprvipodmeni()" class="dropdown-toggle dropleft-close" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">${recepti}</a>
 
       <div class="dropdown-menu dropdown-left" role="menu" aria-labelledby="firstSubmenu" id="firstSubmenu">
-        <a onclick="predjiNaSvaJela('Predjela')" class="dropdown-item">Predjelo</a>
-        <a onclick="predjiNaSvaJela('Glavna jela')" class="dropdown-item">Glavno jelo</a>
-        <a onclick="predjiNaSvaJela('Dezerti')" class="dropdown-item">Dezert</a>
-        <a onclick="predjiNaSvaJela('Uzine')" class="dropdown-item">Uzina</a>
+        <a onclick="predjiNaSvaJela('Predjela')" class="dropdown-item">${predjelo}</a>
+        <a onclick="predjiNaSvaJela('Glavna jela')" class="dropdown-item">${glavnojelo}</a>
+        <a onclick="predjiNaSvaJela('Dezerti')" class="dropdown-item">${dezert}</a>
+        <a onclick="predjiNaSvaJela('Uzine')" class="dropdown-item">${uzina}</a>
       </div>
       
-      <a class="dropdown-item" href="dodajrecept.html">Dodaj recept</a>
-      <a class="dropdown-item" href="mojnalog.html">Moj nalog</a>
-      <a class="dropdown-item" href="#" onclick="izlogujse()">Izloguj se</a>
-      <a class="dropdown-item" href="aboutus.html">O nama</a>
+      <a class="dropdown-item" href="dodajrecept.html">${dodajrecept}</a>
+      <a class="dropdown-item" href="mojnalog.html">${mojnalog}</a>
+      <a class="dropdown-item" href="#" onclick="izlogujse()">${izlogujseTekst}</a>
+      <a class="dropdown-item" href="aboutus.html">${onama}</a>
     </div>
   </div>
   `)

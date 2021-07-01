@@ -34,7 +34,17 @@ else {
 
 galerija += '</div>'
 
-// <th class="slova obicnaslova" style="padding-left: calc(50% - 75px); ">` + recepti[i].naziv + `
+data = JSON.parse(localStorage.getItem(localStorage.getItem("language")))
+
+skinireceptTekst = data["skinirecept"]
+autorTekst = data["autor"]
+vrstajelaTekst = data["vrstajela"]
+prosecnaocenaTekst = data["prosecnaocena"]
+tezinaTekst = data["tezina"]
+vremeTekst = data["vreme"]
+sastojciTekst = data["sastojci"]
+receptTekst = data["recept"]
+
 prosecna = recept.prosecnaocena.toFixed(2)
 document.write(`
 <div class="col-12">
@@ -43,7 +53,7 @@ document.write(`
         <th class="slova obicnaslova" style="padding-top: 50px; font-size: 40px; padding-left: calc(47vw - 180px); ">` + recept.naziv + `
         </th>
         <th style="padding-top: 50px; text-align: right; vertical-align: middle; padding-right: 5vw" >
-            <button class="dugme" onclick="skinirecept('${recept.id}')">Skini recept</button>
+            <button class="dugme" onclick="skinirecept('${recept.id}')">${skinireceptTekst}</button>
         </th>
     </tr>
     <tr class="zabrisanje">
@@ -63,32 +73,32 @@ document.write(`
     </tr>
     <tr>
         <td class="obicnaslova slova"  style="padding-left: calc(50% - 170px);">
-            Autor: ${recept.korisnik}
+            ${autorTekst} ${recept.korisnik}
         </td>
     </tr>
     <tr>
         <td class="obicnaslova slova"  style="padding-left: calc(50% - 170px);">
-            Vrsta jela: ${recept.vrsta}
+            ${vrstajelaTekst} ${recept.vrsta}
         </td>
     </tr>
     <tr>
         <td class="obicnaslova slova"  style="padding-left: calc(50% - 170px);">
-            Prosecna ocena: ${prosecna}
+            ${prosecnaocenaTekst} ${prosecna}
         </td>
     </tr>
     <tr>
         <td class="obicnaslova slova"  style="padding-left: calc(50% - 170px);">
-            Tezina jela: ${recept.tezina}
+            ${tezinaTekst} ${recept.tezina}
         </td>
     </tr>
     
     <tr>
         <td class="obicnaslova slova"  style="padding-left: calc(50% - 170px);">
-            Vreme: ${recept.vreme}
+            ${vremeTekst} ${recept.vreme}
         </td>
     </tr>
     <tr>
-        <td class="obicnaslova slova"  style="padding-left: calc(50% - 170px);">Sastojci:</td>
+        <td class="obicnaslova slova"  style="padding-left: calc(50% - 170px);">${sastojciTekst}</td>
     </tr>
     <tr>
         <td colspan="2">
@@ -98,7 +108,7 @@ document.write(`
         </td>
     </tr>
     <tr>
-        <td class="obicnaslova slova"  style="padding-left: calc(50% - 170px);">Recept:</td>
+        <td class="obicnaslova slova"  style="padding-left: calc(50% - 170px);">${receptTekst}</td>
     </tr>
     <tr>
         <td colspan="2">

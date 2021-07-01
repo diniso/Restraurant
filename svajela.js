@@ -21,14 +21,22 @@ function dohvatiReceptePoTipu() {
 function ubaciRecepte(recepti) {
    $("#zamenjanjediv").empty()
    kontejner = document.getElementById("zamenjanjediv")
+   data = JSON.parse(localStorage.getItem(localStorage.getItem("language")))
+
+    rezultatiTekst= data["rezultati"]
+    tezinaTekst = data["tezina"]
+    ocenaTekst = data["ocena"]
+
    kontejner.innerHTML += `
    <div class="col-12">
-   <h1 class="slova headerslova" style="padding-top: 25px; padding-bottom: 12px;">Rezultati:</h1>
+   <h1 class="slova headerslova" style="padding-top: 25px; padding-bottom: 12px;">${rezultatiTekst}</h1>
 </div>
    `
    for (let i = 0 ; i < recepti.length ; i++) {
     urlSlika = "images/slikakadnemanista.png"
     if (recepti[i].slike.length > 0) urlSlika = recepti[i].slike[0]
+
+    prosecnaOcenaTekst = recepti[i].prosecnaocena.toFixed(2)
     kontejner.innerHTML += `
     <div class="col-12 col-xl-6 text-left">
     <table class="table table-bordered">
@@ -39,12 +47,12 @@ function ubaciRecepte(recepti) {
         </tr>
         <tr>
                 <th class="slova obicnaslova text-center">
-                    <a onclick="ucitajrecept('${recepti[i].id}')">Tezina: ${recepti[i].tezina}</a>
+                    <a onclick="ucitajrecept('${recepti[i].id}')">${tezinaTekst} ${recepti[i].tezina}</a>
                 </th>
             </tr>
             <tr>
                 <th class="slova obicnaslova text-center" >
-                    <a onclick="ucitajrecept('${recepti[i].id}')">Ocena: ${recepti[i].prosecnaocena}</a>
+                    <a onclick="ucitajrecept('${recepti[i].id}')">${ocenaTekst} ${prosecnaOcenaTekst}</a>
                 </th>
             </tr>
         <tr>

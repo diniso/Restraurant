@@ -10,10 +10,13 @@ for (let i = 0 ; i < recept.ocene.length ; i++) {
     }
 }
 
+data = JSON.parse(localStorage.getItem(localStorage.getItem("language")))
+oceniTekst = data["oceni"]
+
 if (!found && korisnik != "" && korisnik != null) {
     document.write(`
         <div class="col-3" style="padding-top:50px; margin-left: 5vw;">
-            <a style="font-size: 20px; margin-right: 15px;" id="ocenatekst" onclick="ocenirecept()"> Oceni:</a>
+            <a style="font-size: 20px; margin-right: 15px;" id="ocenatekst" onclick="ocenirecept()"> ${oceniTekst}</a>
             
             <select  id="oceni">
                 <option value="1">1</option>

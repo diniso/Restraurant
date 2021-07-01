@@ -16,6 +16,8 @@
     <script src="korisniciscript.js"></script>
     <script src="recepti.js"></script>
 
+    <script src="jezici/language.js"></script>
+
 </head>
 <body style="background-color: rgb(226, 225, 179);" >
 
@@ -26,7 +28,7 @@
                 <img src="images/logo.jfif" style="width: 80px; margin: auto; padding-top: 4vh; padding-bottom: 4vh;">
             </div>
             <div class="col-6 col-md-8" style="text-align: center;vertical-align: middle;">
-               <h1 class="slova headerslova" style="padding-top: 6vh;">Vladova kuhinja</h1>
+               <h1 class="slova headerslova" style="padding-top: 6vh;"><script>document.write(readForLanguage("naslov"))</script></h1>
             </div>
 
             <div class="col-3 col-md-2">
@@ -41,12 +43,12 @@
                 <form action="javascript:dodajrecept()">
                     <table class="table table-bordered" id="tabeladodajrecept" style="text-align: center; vertical-align: middle;">
                         <tr >
-                            <th colspan="2" class="slova headerslova" style="padding-bottom: 50px; padding-top: 50px;">Dodaj recept</th>
+                            <th colspan="2" class="slova headerslova" style="padding-bottom: 50px; padding-top: 50px;"><script>document.write(readForLanguage("dodajrecept"))</script></th>
     
                         </tr>
                         <tr>
                             <td style="text-align: right; padding-top: 19px">
-                                <p class="slova obicnaslova">Naziv recepta:</p>
+                                <p class="slova obicnaslova"><script>document.write(readForLanguage("nazivjela"))</script></p>
                                 
                             </td>
                             <td style="text-align: left;">
@@ -55,7 +57,7 @@
                         </tr>
                         <tr>
                             <td style="text-align: right; padding-top: 19px" >
-                                <p class="slova obicnaslova">Tezina:</p>
+                                <p class="slova obicnaslova"><script>document.write(readForLanguage("tezina"))</script></p>
                             </td>
                             <td style="text-align: left;">
                                 <select id="tezina" style="text-align: left; width: 103px; height: 30px;">
@@ -69,30 +71,30 @@
                         </tr>
                         <tr>
                             <td style="text-align: right; padding-top: 19px">
-                                <p class="slova obicnaslova">Vrsta jela:</p>
+                                <p class="slova obicnaslova"><script>document.write(readForLanguage("vrstajela"))</script></p>
                             </td>
                             <td style="text-align: left;">
                                 <select id="vrstajela" style="text-align: left; height: 30px;">
-                                    <option value="Predjelo">Predjelo</option>
-                                    <option value="Glavno jelo">Glavno jelo</option>
-                                    <option value="Dezert">Dezert</option>
-                                    <option value="Uzina">Uzina</option>
+                                    <option value="Predjelo"><script>document.write(readForLanguage("predjelo"))</script></option>
+                                    <option value="Glavno jelo"><script>document.write(readForLanguage("glavnojelo"))</script></option>
+                                    <option value="Dezert"><script>document.write(readForLanguage("dezert"))</script></option>
+                                    <option value="Uzina"><script>document.write(readForLanguage("uzina"))</script></option>
                                 </select>
                             </td>
                         </tr>
                         <tr>
                             <td style="text-align: right; padding-top: 19px">
-                                <p class="slova obicnaslova">Vreme pripreme jela:</p>
+                                <p class="slova obicnaslova"><script>document.write(readForLanguage("vreme"))</script></p>
                             </td>
                             <td style="text-align: left;">
                                 <input type="text" pattern="[0-9]:[0-5][0-9]" id="vremepripreme" placeholder="h:mm" required>
                             </td>
                         </tr>
                         <tr >
-                            <th colspan="2" class="slova headerslova" style=" padding-bottom: 40px; padding-top: 25px;">Sastojci</th>
+                            <th colspan="2" class="slova headerslova" style="padding-bottom: 40px; padding-top: 25px;"><script>document.write(readForLanguage("sastojci"))</script></th>
                         </tr>
                         <tr>
-                            <td style="text-align: right;">
+                            <td style="padding-left:5vw; text-align: right;">
                                 <input type="text" id="sastojak1" placeholder="naziv sastojka" class="sastojak" required>
                             </td>
                             <td style="text-align: left;">
@@ -107,10 +109,10 @@
                         </tr>
                         <tr>
                             <td style="padding-bottom: 25px; padding-top: 25px; text-align: right;">
-                                <button type="button" onclick="dodajsastojakkolonu()" class="btn dugme">Dodaj sastojak</button>
+                                <button type="button" onclick="dodajsastojakkolonu()" class="btn dugme"><script>document.write(readForLanguage("dodajsastojak"))</script></button>
                             </td>
                             <td style="padding-bottom: 25px; padding-top: 25px; text-align: left;">
-                                <button type="submit" class="btn dugme">Dodaj recept</button>
+                                <button type="submit" class="btn dugme"><script>document.write(readForLanguage("dodajrecept"))</script></button>
                             </td>
                         </tr>
                     </table>
@@ -121,7 +123,7 @@
 
         <div class="row">
             <div class="col" style="background-color: rgb(116, 110, 58);text-align: center;vertical-align: middle;">
-                <h3 class="slova" style="padding: 25px; margin-bottom: 25px;">Copyright 2021, Vlade Vulovic, Odsek za softversko inzenjerstvo Elektrotehnickog fakulteta Univerziteta u Beogradu</h3>
+                <h3 class="slova" style="padding: 25px; margin-bottom: 25px;"><script>document.write(readForLanguage("footer"))</script></h3>
             </div>
         </div>
     

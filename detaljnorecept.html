@@ -17,6 +17,8 @@
     <script src="jsPDF-1.3.2/dist/jspdf.min.js"></script>
     <script src="dodajkomentar.js"></script>
 
+    <script src="jezici/language.js"></script>
+
     <script>
         function ocenirecept() {
             recepti = JSON.parse(localStorage.getItem("recepti"))
@@ -56,7 +58,7 @@
                 <img src="images/logo.jfif" style="width: 80px; margin: auto; padding-top: 4vh; padding-bottom: 4vh;">
             </div>
             <div class="col-6 col-md-8" style="text-align: center;vertical-align: middle;">
-               <h1 class="slova headerslova" style="padding-top: 6vh;">Vladova kuhinja</h1>
+               <h1 class="slova headerslova" style="padding-top: 6vh;"><script>document.write(readForLanguage("naslov"))</script></h1>
             </div>
 
             <div class="col-3 col-md-2">
@@ -72,7 +74,7 @@
 
         <div class="row">
             <div class="col-8 text-left">
-                <h1 class="slova obicnaslova" style="margin-left: calc(20vw - 100px); padding-top:50px; padding-right: 200px;">Komentari:</h1>
+                <h1 class="slova obicnaslova" style="margin-left: calc(20vw - 100px); padding-top:50px; padding-right: 200px;"><script>document.write(readForLanguage("komentari"))</script></h1>
             </div>
             <script src="ucitavanja/ucitajocenjivanjerecepta.js"></script>
         </div>
@@ -82,7 +84,7 @@
                 <input style="margin-left:calc(20vw - 50px); width: 60vw;" type="text" placeholder="Dodaj komentar" id="tekst komentar">
             </div>
             <div class="col-lg-2 col-12 text-center pt-lg-0 pt-5 pl-lg-5 pr-5 pr-lg-0">
-                <button  class="dugme ml-lg-5" type="button" onclick="dodajkomentar()" >Komentarisi</button>
+                <button  class="dugme ml-lg-5" type="button" onclick="dodajkomentar()" ><script>document.write(readForLanguage("komentarisi"))</script></button>
             </div>
         </div>
 
@@ -90,7 +92,7 @@
 
         <div class="row">
             <div class="col" style="background-color: rgb(116, 110, 58);text-align: center;vertical-align: middle; margin-top: 50px;">
-                <h3 class="slova" style="padding: 25px; margin-bottom: 25px;">Copyright 2021, Vlade Vulovic, Odsek za softversko inzenjerstvo Elektrotehnickog fakulteta Univerziteta u Beogradu</h3>
+                <h3 class="slova" style="padding: 25px; margin-bottom: 25px;"><script>document.write(readForLanguage("footer"))</script></h3>
             </div>
         </div>
     

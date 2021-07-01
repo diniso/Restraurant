@@ -1,13 +1,18 @@
 
 function ucitajSveRecepte(recepti) {
 
-    
+    user = localStorage.getItem("loggeduser")
+    data = JSON.parse(localStorage.getItem(localStorage.getItem("language")))
+
+    rezultatiTekst= data["rezultati"]
+    tezinaTekst = data["tezina"]
+    ocenaTekst = data["ocena"]
 
     document.write(`
     <hr>
     <div class="row text-center" id="zamenjanjediv">
     <div class="col-12">
-        <h1 class="slova headerslova" style="padding-top: 25px; padding-bottom: 12px;">Rezultati:</h1>
+        <h1 class="slova headerslova" style="padding-top: 25px; padding-bottom: 12px;">${rezultatiTekst}</h1>
     </div>
     `)
 
@@ -30,12 +35,12 @@ function ucitajSveRecepte(recepti) {
             </tr>
             <tr>
                 <th class="slova obicnaslova text-center">
-                    <a onclick="ucitajrecept('${recepti[i].id}')">Tezina: ${recepti[i].tezina}</a>
+                    <a onclick="ucitajrecept('${recepti[i].id}')">${tezinaTekst} ${recepti[i].tezina}</a>
                 </th>
             </tr>
             <tr>
                 <th class="slova obicnaslova text-center" >
-                    <a onclick="ucitajrecept('${recepti[i].id}')">Ocena: ${prosecna}</a>
+                    <a onclick="ucitajrecept('${recepti[i].id}')">${ocenaTekst} ${prosecna}</a>
                 </th>
             </tr>
             <tr>

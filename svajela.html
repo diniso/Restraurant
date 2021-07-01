@@ -17,6 +17,8 @@
     <script src="svajela.js"></script>
     <script src="ucitavanja/ucitajsverecepte.js"></script>
 
+    <script src="jezici/language.js"></script>
+
 </head>
 <body style="background-color: rgb(226, 225, 179);" >
 
@@ -27,7 +29,7 @@
                 <img src="images/logo.jfif" style="width: 80px; margin: auto; padding-top: 4vh; padding-bottom: 4vh;">
             </div>
             <div class="col-6 col-md-8" style="text-align: center;vertical-align: middle;">
-               <h1 class="slova headerslova" style="padding-top: 6vh;">Vladova kuhinja</h1>
+               <h1 class="slova headerslova" style="padding-top: 6vh;"><script>document.write(readForLanguage("naslov"))</script></h1>
             </div>
 
             <div class="col-3 col-md-2">
@@ -42,41 +44,43 @@
                 <table class="table table-bordered">
                     <tr>
                         <th colspan="2" class="slova headerslova" style="padding-top: 50px; padding-bottom: 25px;" >
+                            <span style="display: none"><script>document.write('<p id="tipjela">' + localStorage.getItem("vrstaJela") + '</p>')</script></span>
                             <script>
-                                 document.write('<p id="tipjela">' + localStorage.getItem("vrstaJela") + '</p>')
-                            //    document.write(localStorage.getItem("vrstaJela"))
+                                 tipJela = localStorage.getItem("vrstaJela").toLowerCase().replace(/\s+/, "") 
+                                 tipJela = readForLanguage(tipJela)
+                                 document.write('<p>' + tipJela + '</p>')
                             </script>
                         </th>
                     </tr>
                     <tr>
-                        <td class="slova obicnaslova" style="margin-left: 30px; text-align: right; padding-left: calc(1vw + 50px);">Ime recepta:</td>
+                        <td class="slova obicnaslova" style="margin-left: 30px; text-align: right; padding-left: calc(1vw + 50px);"><script>document.write(readForLanguage("imerecepta"))</script></td>
                         <td style="text-align: left;">
                             <input type="text" id="nazivrecepta">
                         </td>
                     </tr>
                     <tr>
                         <td class="slova obicnaslova" style="text-align: right;">
-                            Sortiraj:
+                            <script>document.write(readForLanguage("sortiraj"))</script>
                         </td>
                         <td  style="text-align: left;">
                             <select id="vrstasortiranja" >
-                                <option value="Rastuce">Rastuce</option>
-                                <option value="Opadajuce">Opadajuce</option>
+                                <option value="Rastuce"><script>document.write(readForLanguage("rastuce"))</script></option>
+                                <option value="Opadajuce"><script>document.write(readForLanguage("opadajuce"))</script></option>
                             </select>
                         </td>
                     </tr>
                     <tr>
                         <td class="slova obicnaslova" style="text-align: right;">
-                            Pretraga po: 
+                            <script>document.write(readForLanguage("pretragapo"))</script>
                         </td>
                         <td style="text-align: left;" class="slova obicnaslova">
-                            Ocena <input type="radio" name="tipsorta" value="Ocena" >
-                            Tezina <input type="radio" name="tipsorta" value="Tezina">
+                            <script>document.write(readForLanguage("ocena"))</script> <input type="radio" name="tipsorta" value="Ocena" >
+                            <script>document.write(readForLanguage("tezina"))</script> <input type="radio" name="tipsorta" value="Tezina">
                         </td>
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <button type="button" class="dugme" onclick="pretraziReceptePoTipu()">Pretrazi</button>
+                            <button type="button" class="dugme" onclick="pretraziReceptePoTipu()"><script>document.write(readForLanguage("pretrazi"))</script></button>
                         </td>
                     </tr>
                 </table>
@@ -90,7 +94,7 @@
 
         <div class="row">
             <div class="col" style="background-color: rgb(116, 110, 58);text-align: center;vertical-align: middle; margin-top: 50px;">
-                <h3 class="slova" style="padding: 25px; margin-bottom: 25px;">Copyright 2021, Vlade Vulovic, Odsek za softversko inzenjerstvo Elektrotehnickog fakulteta Univerziteta u Beogradu</h3>
+                <h3 class="slova" style="padding: 25px; margin-bottom: 25px;"><script>document.write(readForLanguage("footer"))</script></h3>
             </div>
         </div>
     
