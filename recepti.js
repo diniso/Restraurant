@@ -14,7 +14,7 @@ function generateUUID() { // Public Domain/MIT
     });
 }
 
-function dodajrecept() {
+function dodajreceptfun() {
     nazivRecepta = document.getElementById("imerecepta").value
     tezina = document.getElementById("tezina").value
     vrstaJela = document.getElementById("vrstajela").value
